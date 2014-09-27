@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Guys</title>
+</head>
+
+<body>
+
+<div id="content">
+
+<table>
+  <tr>
+    <th>Guy</th>
+    <th>Owner</th>
+    <th>Position</th>
+    <th>Created</th>
+  </tr>
+
+  {% if guys %}
+  {% for guy in guys %}
+  <tr>
+    <td>{{ guy.name }}</td>
+    <td>{{ guy.owner.username }}</td>
+    <td>{{ guy.position.x }}, {{ guy.position.y }}, {{ guy.position.dir }}</td>
+    <td>{{ guy.created }}</td>
+  </tr>
+  {% endfor %}
+  {% else %}
+  <tr>
+    <td colspan="4" style="text-align: center;">No Guys</td>
+  </td>
+  {% endif %}
+
+</table>
+
+</div>
+
+</body>
+
+</html>
+
+

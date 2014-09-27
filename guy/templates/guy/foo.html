@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Guy List{% endblock %}
+
+{% block content %}
+<table>
+  <tr>
+    <th>Guy</th>
+    <th>Owner</th>
+    <th>Position</th>
+    <th>Created</th>
+  </tr>
+
+  {% for guy in guys %}
+  <tr>
+    <td>{{ guy.name }}</td>
+    <td>{{ guy.owner.username }}</td>
+    <td>{{ guy.position.x }}, {{ guy.position.y }}, {{ guy.position.dir }}</td>
+    <td>{{ guy.created }}</td>
+  </tr>
+  {% endfor %}
+
+</table>
+{% endblock %}
