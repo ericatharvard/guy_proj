@@ -1,0 +1,21 @@
+div#display_port {
+  position: relative;	
+  width: 400px;
+  height: 300px;
+  background-color: #ccf;
+}
+
+div#guy_icon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: 2px;
+    padding: 4px;
+}
+
+.move_button {
+    width: 16px;
+    height: 16px;
+    margin: 2px;
+    padding: 4px;
+}

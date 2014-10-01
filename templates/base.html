@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load staticfiles %}
+<title>{% block title %}Guy{% endblock %}</title>
+<link type="text/css" href="{% static 'style.css' %}" rel="stylesheet" />
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+<!-- <script type="text/javascript" src="" /> -->
+{% block extrahead %}{% endblock %}
+</head>
+
+<body>
+
+<div id="content">
+
+{% block content %}{% endblock %}
+
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+{% block extrafooterjs %}{% endblock %}
+
+</body>
+
+</html>

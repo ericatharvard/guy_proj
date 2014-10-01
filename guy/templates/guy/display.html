@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Guy Display{% endblock %}
+{% block extrahead %}
+<link type="text/css" href="{% static 'guy/guy_style.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+{{ guy }}
+
+<div id="display_port">
+  <div id="guy_icon" class="ui-state-default ui-corner-all">
+  <span class="ui-icon"></span>
+  </div>
+</div>
+
+<div id="control_menu">
+  <table>
+    <tr>
+      <td></td>
+      <td><div id="f" class="ui-state-default ui-corner-all move_button">
+	<span class="ui-icon ui-icon-arrowthick-1-n"></span>
+      </div></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><div id="l" class="ui-state-default ui-corner-all move_button">
+	  <span class="ui-icon ui-icon-arrowthick-1-w"></span>
+	</div></td>      
+      <td><div id="b" class="ui-state-default ui-corner-all move_button">
+	  <span class="ui-icon ui-icon-arrowthick-1-s"></span>
+	</div></td>
+      <td><div id="r" class="ui-state-default ui-corner-all move_button">
+	  <span class="ui-icon ui-icon-arrowthick-1-e"></span>
+	</div></td>
+    </tr>
+  </table>
+</div>
+
+{% endblock %}
+{% block extrafooterjs %}
+<script>
+var guy_id = {{ guy.id }};
+var guy_pos_x = {{ guy.position.x }};
+var guy_pos_y = {{ guy.position.y }};
+var guy_dir = '{{ guy.position.get_dir_letter }}';
+</script>
+<script type="text/javascript" src="{% static 'guy/guy.js' %}"></script>
+{% endblock %}

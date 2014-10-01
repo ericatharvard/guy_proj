@@ -24,3 +24,9 @@ class Position(models.Model):
 
     def __str__(self):
         return "X: %d, Y: %d, DIR: %s" % (self.x, self.y, self.get_dir_display())
+
+    def get_dir_name(self):
+        return self.get_dir_display()
+
+    def get_dir_letter(self):
+        return self.get_dir_display()[0].lower()

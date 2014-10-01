@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Guys</title>
-</head>
+{% extends "base.html" %}
 
-<body>
+{% block title %}Guy List{% endblock %}
 
-<div id="content">
-
+{% block content %}
 <table>
   <tr>
     <th>Guy</th>
@@ -19,7 +14,7 @@
   {% if guys %}
   {% for guy in guys %}
   <tr>
-    <td>{{ guy.name }}</td>
+    <td><a href="{% url 'guy:display' guy_id=guy.id %}">{{ guy.name }}</a></td>
     <td>{{ guy.owner.username }}</td>
     <td>{{ guy.position.x }}, {{ guy.position.y }}, {{ guy.position.dir }}</td>
     <td>{{ guy.created }}</td>
@@ -28,15 +23,8 @@
   {% else %}
   <tr>
     <td colspan="4" style="text-align: center;">No Guys</td>
-  </td>
+  </tr>
   {% endif %}
 
 </table>
-
-</div>
-
-</body>
-
-</html>
-
-
+{% endblock %}

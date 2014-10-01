@@ -54,7 +54,7 @@ class Guy(models.Model):
             raise
 
         self.position.dir = (self.position.dir + i) % 4
-        self.save()
+        self.position.save()
         return self.position.get_dir_display()
 
     def move(self, fob='f'):
@@ -76,5 +76,5 @@ class Guy(models.Model):
                 self.position.x += i
             else:
                 self.position.x -= i
-        self.save()
+        self.position.save()
         return self.position
